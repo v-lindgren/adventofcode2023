@@ -17,15 +17,15 @@ for line in input_lines:
             'eight': '8', 
             'nine': '9'}
 
+    # find both written and numeric numbers
     numbers = re.findall('[0-9]|one|two|three|four|five|six|seven|eight|nine', line)
-    
 
-    if len(numbers) > 0:
-        if numbers[0] in number_dict:
-            numbers[0] = number_dict.get(numbers[0])
-        if numbers[-1] in number_dict:
-            numbers[-1] = number_dict.get(numbers[-1])
+    # translate written numbers if required
+    if numbers[0] in number_dict:
+        numbers[0] = number_dict.get(numbers[0])
+    if numbers[-1] in number_dict:
+        numbers[-1] = number_dict.get(numbers[-1])
 
-        total_sum += int(numbers[0] + numbers[-1])
+    total_sum += int(numbers[0] + numbers[-1]) # concatenate and add to total
 
 print(total_sum)
