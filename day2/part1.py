@@ -22,7 +22,7 @@ for line in input_lines:
 
     # as we have sorted the sets from small to large, we can do this the
     # lazy way and just overwrite to end up with the largest value
-    colour_count = { set[1]: int(set[0]) for set in matches if set[0] }
+    colour_count = { set[1]: int(set[0]) for set in matches }
 
     # if the count of all colours is lower than the maximum possible,
     # add the game's id to the sum
