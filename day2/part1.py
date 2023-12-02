@@ -15,9 +15,9 @@ sum_ids = 0
 
 for line in input_lines:
     # find all '(count) (colour)' pairs
-    matches = re.findall('[,;:] ([0-9]*) (\w+)', line)
+    matches = re.findall('([0-9]+) ([A-z]+)', line)
 
-    # sort by the the count (default sort sorts as string)
+    # sort by the the count (default sort is by first char in string)
     matches.sort(key = lambda x:int(x[0]))
 
     # as we have sorted the sets from small to large, we can do this the
