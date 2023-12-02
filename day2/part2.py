@@ -19,8 +19,7 @@ for line in input_lines:
     # way and just overwrite to end up with the largest value for each colour
     colour_count = { set[1]: int(set[0]) for set in matches }
 
-    # multiply the values together and add to sum
-    power = reduce(lambda x,y: x * y, colour_count.values())
-    sum_powers += power
+    # multiply the values together and add to the total
+    sum_powers += reduce(lambda x,y: x * y, colour_count.values())
 
 print(sum_powers)
