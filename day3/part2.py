@@ -6,7 +6,7 @@ from parse_input import parse_input
 
 input_lines = parse_input('input.txt', 'list')
 PART_SYMBOLS = '[*]'
-part_numbers = []
+gear_ratios = []
 
 def get_active_positions(line):
     positions = []
@@ -40,19 +40,15 @@ for row_number, line in enumerate(input_lines):
         # create a sorted unique set of all nearby numbers' positions
         num_positions = numbers_previous + numbers_current + numbers_next
         
-        # TODO - method below doesn't work - have to check each number individually for each gear
-        #for num in num_positions:
-        #    active_pos += list(range(num[1]-1, num[2]+1))
-        #active_pos = set(active_pos)
+        for gear_pos in gear_positions:
+            adjacent_numbers = []
+            for num in num_positions:
+                if gear_pos in range(num[1]-1, num[2]+1):
+                    adjacent_numbers.append(int(num[0]))
 
-        for gear in gear_positions:
-
-
-        part_number_positions = []
-        for pos in num_positions:
-            part_number_positions += list(range(pos[1]-1, pos[2]+2))
-
-
+            if len(adjacent_numbers) == 2:
+                gear_ratios.append(reduce(lambda x,y: x*y, adjacent_numbers))
+         
     numbers_previous = numbers_current
 
-#print(sum([eval(num) for num in part_numbers]))
+print(sum(gear_ratios))
