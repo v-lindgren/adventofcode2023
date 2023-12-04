@@ -5,8 +5,6 @@ from parse_input import parse_input
 
 input_lines = parse_input('input.txt', 'list')
 
-deck = list(input_lines)
-
 # Parse a line(ticket) and return the count of winning numbers on it
 def get_num_wins(line):
     number_groups = re.split(':|\| +', line)[1::]
