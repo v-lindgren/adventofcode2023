@@ -8,8 +8,8 @@ input_lines = parse_input('input.txt', 'list')
 all_winning_numbers = []
 
 for line in input_lines:
-    card = re.split(':|\| +', line)[1::]
-    winning_numbers, my_numbers = map(lambda x: [ int(num) for num in re.findall('[0-9]+', x)], card)
+    number_groups = re.split(':|\| +', line)[1::]
+    winning_numbers, my_numbers = map(lambda x: [ int(num) for num in re.findall('[0-9]+', x)], number_groups)
 
     my_winning_numbers = (set(winning_numbers) & set(my_numbers))
     all_winning_numbers.append(my_winning_numbers)
