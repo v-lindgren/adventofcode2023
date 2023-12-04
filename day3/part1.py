@@ -1,5 +1,4 @@
 import re
-from functools import reduce
 import sys
 sys.path.append('../')
 from parse_input import parse_input
