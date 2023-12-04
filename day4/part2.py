@@ -14,12 +14,12 @@ def get_num_wins(line):
     
     return len(set(winning_numbers) & set(my_numbers))
 
-# Create the original deck of cards, on the format 'index: [count, number_of_wins]'
+# Create the original deck of tickets, on the format 'index: [count, number_of_wins]'
 deck = { i: [1, get_num_wins(x)] for i,x in enumerate(input_lines) }
 
-for index, card in deck.items():
-    # increase count of the n next cards by the count of current card held
-    for n in range(card[1]):
-        deck[index+1 + n][0] += card[0]
+for index, ticket in deck.items():
+    # increase count of the n next tickets by the count of current tickets held
+    for n in range(ticket[1]):
+        deck[index+1 + n][0] += ticket[0]
 
 print(sum([ x[0] for x in deck.values()]))
