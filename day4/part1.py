@@ -13,7 +13,7 @@ for line in input_lines:
         lambda x: [ int(num) for num in re.findall('[0-9]+', x)],
         number_groups)
 
-    my_winning_numbers = (set(winning_numbers) & set(my_numbers))
+    my_winning_numbers = set(winning_numbers) & set(my_numbers)
     all_winning_numbers.append(my_winning_numbers)
 
 score = [ int(2 ** (len(x) - 1)) for x in all_winning_numbers ]
