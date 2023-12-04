@@ -37,7 +37,7 @@ for row_number, line in enumerate(input_lines):
     active_pos = []
     if gear_positions:
         
-        # create a sorted unique set of all nearby numbers' positions
+        # create list of all nearby numbers' horizontal positions
         num_positions = numbers_previous + numbers_current + numbers_next
         
         for gear_pos in gear_positions:

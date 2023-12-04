@@ -20,7 +20,7 @@ def get_num_wins(line):
 deck = { i: [1, get_num_wins(x)] for i,x in enumerate(input_lines) }
 
 for index, card in deck.items():
-    # increase count of n following by number of current card
+    # increase count of the n next cards by the count of current card held
     for n in range(card[1]):
         deck[index+1 + n][0] += card[0]
 
