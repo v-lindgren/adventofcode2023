@@ -9,7 +9,9 @@ all_winning_numbers = []
 
 for line in input_lines:
     number_groups = re.split(':|\| +', line)[1::]
-    winning_numbers, my_numbers = map(lambda x: [ int(num) for num in re.findall('[0-9]+', x)], number_groups)
+    winning_numbers, my_numbers = map(
+        lambda x: [ int(num) for num in re.findall('[0-9]+', x)],
+        number_groups)
 
     my_winning_numbers = (set(winning_numbers) & set(my_numbers))
     all_winning_numbers.append(my_winning_numbers)
