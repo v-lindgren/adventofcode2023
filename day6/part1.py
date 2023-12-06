@@ -4,7 +4,6 @@ import sys
 sys.path.append('../')
 from parse_input import parse_input
 
-# Get times and distances for the races
 input_lines = parse_input('input.txt', 'list')
 times, records = [ [ int(time) for time in re.findall('[0-9]+', line) ] for line in input_lines ]
 
