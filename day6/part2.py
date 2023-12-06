@@ -6,8 +6,7 @@ from parse_input import parse_input
 
 input_lines = parse_input('input.txt', 'list')
 
-time = int(reduce(lambda x, y: x + y, re.findall('[0-9]+', input_lines[0])))
-record = int(reduce(lambda x, y: x + y, re.findall('[0-9]+', input_lines[1])))
+time, record = [ int(reduce(lambda x, y: x + y, re.findall('[0-9]+', line))) for line in input_lines ]
 
 # Start from the bottom and check for the lowest charging
 # time that beats the record distance, the return the range
