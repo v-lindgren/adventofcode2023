@@ -5,7 +5,6 @@ sys.path.append('../')
 from parse_input import parse_input
 
 input_lines = parse_input('input.txt', 'list')
-
 time, record = [ int(reduce(lambda x, y: x + y, re.findall('[0-9]+', line))) for line in input_lines ]
 
 # Start from the bottom and check for the lowest charging
