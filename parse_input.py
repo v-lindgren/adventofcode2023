@@ -23,5 +23,8 @@ def parse_input(file, outputtype = 'list', delimiter = None):
                 split_list.append(group) # append last group
                 return split_list
             return None
+        case 'matrix':
+            inputmatrix = [ list(line) for line in inputlist ]
+            return inputmatrix
         case _:
             return None
